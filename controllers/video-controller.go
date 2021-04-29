@@ -16,7 +16,7 @@ type controller struct {
 }
 
 func New(service service.VideoService) VideoController {
-	return controller{
+	return &controller{
 		service: service,
 	}
 }

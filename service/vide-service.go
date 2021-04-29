@@ -4,7 +4,7 @@ import "github.com/golangApi/entity"
 
 type VideoService interface {
 	Save(entity.Video) entity.Video
-	findAll() []entity.Video
+	FindAll() []entity.Video
 }
 
 type videoService struct {
