@@ -1,0 +1,3 @@
+[GIN-debug] GET    /api/v1/videos            --> main.main.func1 (5 handlers)
+[GIN-debug] POST   /api/v1/videos            --> main.main.func2 (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
