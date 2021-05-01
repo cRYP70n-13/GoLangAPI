@@ -25,15 +25,11 @@ func (c *controller) FindAll() []entity.Video {
 	return c.service.FindAll()
 }
 
-func (c *controller) Save(ctx *gin.Context) error {
+func (c *controller) Save(ctx *gin.Context) entity.Video {
 	var video entity.Video
-	err := ctx.ShouldBindJSON(&video)
 
-	if err != nil {
-		return err
-	}
-
+	ctx.BindJSON(&video)
 	c.service.Save(video)
 
-	return nil
+	return video
 }
