@@ -2,6 +2,7 @@ package main
 
 import (
 	"io"
+	"net/http"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -39,7 +40,12 @@ func main() {
 	})
 
 	server.POST("/api/v1/videos", func(c *gin.Context) {
-		c.JSON(200, videoController.Save(c))
+		err := videoController.Save(c)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		} else {
+			c.JSON(http.StatusOK, gin.H{"message": "Hey welcome again"})
+		}
 	})
 
 	server.Run(":8080")

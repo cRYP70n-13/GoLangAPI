@@ -1,4 +1,3 @@
 [GIN-debug] GET    /api/v1/videos            --> main.main.func1 (4 handlers)
 [GIN-debug] POST   /api/v1/videos            --> main.main.func2 (4 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 400 with 200
